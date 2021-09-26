@@ -1,0 +1,17 @@
+<h1>Projects</h1>
+
+<ul>
+  <% @projects.each do |project| %>
+    <% if project.user == current_user %>
+      <li>
+        <%= link_to project.name, project %>
+      </li>
+
+      <%= "User Id:" %>
+      <%= current_user.id %>
+    <% end %>
+
+  <% end %>
+</ul>
+
+<%= link_to "New Project", new_project_path %>

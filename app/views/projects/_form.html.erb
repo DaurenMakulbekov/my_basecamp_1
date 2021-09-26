@@ -1,0 +1,18 @@
+<%= form_with model: project do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% project.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <br>
+    <%= form.number_field :user_id, id: :project_user_id, value: current_user.id, type: :hidden %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

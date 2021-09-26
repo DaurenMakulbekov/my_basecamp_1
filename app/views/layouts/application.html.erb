@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>MyBasecamp1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class = "container">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        </li>
+
+        <li>
+          <%= link_to "Edit", edit_user_registration_path %>
+        </li>
+
+        <li>
+          <%= link_to "Projects", projects_path %>
+        </li>
+
+      <% end %>
+      <br/>
+      <%= yield %>
+    </div>
+  </body>
+</html>
