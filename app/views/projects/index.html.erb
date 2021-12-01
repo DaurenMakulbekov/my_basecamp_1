@@ -1,17 +1,18 @@
 <h1>Projects</h1>
-
-<ul>
-  <% @projects.each do |project| %>
-    <% if project.user == current_user %>
-      <li>
-        <%= link_to project.name, project %>
-      </li>
-
-      <%= "User Id:" %>
-      <%= current_user.id %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Project name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <% if project.user == current_user %>
+      <tr>
+        <td><%= link_to project.name, project %></td>
+      </tr>
+      <% end %>
     <% end %>
-
-  <% end %>
-</ul>
-
-<%= link_to "New Project", new_project_path %>
+  </tbody>
+</table>
+<%= link_to "New Project", new_project_path, class:"btn btn-primary" %>

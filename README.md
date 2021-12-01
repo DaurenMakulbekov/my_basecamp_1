@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# My Basecamp 1
 
-Things you may want to cover:
+# User Registration
+You can create a new user, edit and delete a user.
 
-* Ruby version
+# Session
+Users can sign in and sign out.
 
-* System dependencies
+# Role Permission
+Admin
 
-* Configuration
+# Project
+Users can create, edit and destroy a project.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Run app on Heroku
+https://userprojects.herokuapp.com/

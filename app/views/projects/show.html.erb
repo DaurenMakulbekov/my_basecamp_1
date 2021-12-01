@@ -1,8 +1,8 @@
 <h1><%= @project.name %></h1>
-
+<br/>
 <ul>
-  <li><%= link_to "Edit", edit_project_path(@project) %></li>
-  <li><%= link_to "Destroy", project_path(@project),
+  <%= link_to "Edit", edit_project_path(@project), class:"btn btn-primary" %>
+  <%= link_to "Destroy", project_path(@project), class:"btn btn-primary",
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+                  data: { confirm: "Are you sure?" } %>
 </ul>
