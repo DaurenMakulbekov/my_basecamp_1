@@ -1,8 +1,28 @@
-<h1><%= @project.name %></h1>
-<br/>
-<ul>
-  <%= link_to "Edit", edit_project_path(@project), class:"btn btn-primary" %>
-  <%= link_to "Destroy", project_path(@project), class:"btn btn-primary",
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-</ul>
+<p id="notice"><%= notice %></p>
+
+<div class="col-auto">
+
+  <h1><%= @project.name %></h1>
+  <br>
+
+  <%= @project.body %>
+  
+  <br>
+
+  <!-- >
+  <%= form_with model: @project do |form| %>
+    <div class="field">
+      <%= form.label :file %>
+      <%= form.file_field :file, class: "form-control" %>
+    </div>
+  <% end %>
+  <-->
+  
+  <ul>
+    <%= link_to "Edit", edit_project_path(@project), class:"btn btn-primary" %>
+    <%= link_to "Delete", project_path(@project), class:"btn btn-primary",
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+  </ul>
+
+</div>
